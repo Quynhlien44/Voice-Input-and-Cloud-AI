@@ -10,18 +10,18 @@ This project builds an ESP32-S3 voice control hardware and a PC software acquisi
 
 ## Structure
 
-├── main/                     # Firmware ESP32 (written in C using ESP-IDF)
-│   ├── main.c                # Code main firmware ESP32
-│   ├── CMakeLists.txt        # ESP-IDF build configuration
-├── python_pc_bridge/         # Python software running on PC
-│   ├── main.py               # Process coordinated commands, receive ESP32 data
-│   ├── ai_backend.py         # Call API ChatGPT/Grok
-│   ├── speech_to_text.py     # Voice recording and recognition using OpenAI Whisper
-│   ├── intent_detector.py    # Detect command intent from text
-│   ├── action_executor.py    # Fast local command execution
-│   ├── serial_comm.py        # Communicate with ESP32 via serial
-│   └── requirements.txt      # Library to install for PC
-├── README.md                 # General information about the project`
+    ├── main/                 # Firmware ESP32 (written in C using ESP-IDF)
+    │   ├── main.c            # Code main firmware ESP32
+    │   ├── CMakeLists.txt    # ESP-IDF build configuration
+    ├── python_pc_bridge/     # Python software running on PC
+    │   ├── main.py           # Process coordinated commands, receive ESP32 data
+    │   ├── ai_backend.py     # Call API ChatGPT/Grok
+    │   ├── speech_to_text.py # Voice recording and recognition using OpenAI Whisper
+    │   ├── intent_detector.py# Detect command intent from text
+    │   ├── action_executor.py# Fast local command execution
+    │   ├── serial_comm.py    # Communicate with ESP32 via serial
+    │   ├── requirements.txt  # Library to install for PC
+    ├── README.md             # General information about the project
 
 ---
 
@@ -37,11 +37,11 @@ https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.ht
 
 ## Setup Instructions
 
-1. ESP32 Firmware
+1. **ESP32 Firmware**
 - Build and flash the firmware in main/ folder using ESP-IDF tools.
 - The firmware reads voice/text commands and sends to PC via serial port.
 - When INMP441 microphone hardware becomes available, firmware will update to support audio streaming on ESP32.
-2. Python PC Software
+2. **Python PC Software**
 - Create and active a Python virtual environment:
 
 ```bash
@@ -77,6 +77,7 @@ python3 python_pc_bridge/main.py
 ## Environment Variables
 
 To use AI cloud services, you need to setup API keys securely:
+
 Create a .env.local file in the root directory and add keys there:
 
 ```bash
