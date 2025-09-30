@@ -10,7 +10,6 @@ This project builds an ESP32-S3 voice control hardware and a PC software acquisi
 
 ## Structure
 
-`text.
 ├── main/                     # Firmware ESP32 (written in C using ESP-IDF)
 │   ├── main.c                # Code main firmware ESP32
 │   ├── CMakeLists.txt        # ESP-IDF build configuration
@@ -32,25 +31,60 @@ This project builds an ESP32-S3 voice control hardware and a PC software acquisi
 - This is a starter sample project for developing with ESP-IDF for ESP32-S3.
 - Use CMake to build, configure in the `CMakeLists.txt` file.
 - Details on how to build and create a new project according to the ESP-IDF documentation:
-
 https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project
 
 ---
 
-## Instructions
+## Setup Instructions
 
-1. Install the ESP-IDF environment for ESP32-S3 according to the manual.
-2. Build and flash the ESP32 firmware in the `main` folder.
-3. On your PC, create a Python virtual environment and install the library:
+1. ESP32 Firmware
+- Build and flash the firmware in main/ folder using ESP-IDF tools.
+- The firmware reads voice/text commands and sends to PC via serial port.
+- When INMP441 microphone hardware becomes available, firmware will update to support audio streaming on ESP32.
+2. Python PC Software
+- Create and active a Python virtual environment:
 
-`pip install -r python_pc_bridge/requirements.txt`
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-1. Run Python software on PC:
+- Install required packages:
 
-`python3 python_pc_bridge/main.py`
+```bash
+pip install -r python_pc_bridge/requirements.txt
+```
 
-1. ESP32 sends voice or text commands via serial port to PC for processing.
-2. PC records voice or text in real time, calls AI for translation, receives intent analysis, and then returns commands to ESP32.
+- Run the PC software:
+
+```bash
+python3 python_pc_bridge/main.py
+```
+
+---
+
+## How It Works
+
+- ESP32 sends voice or text commands to PC via serial.
+- PC records voice using Whisper or processes text commands.
+- Intent detector parses command meaning
+- Executes local device actions or calls cloud AI services.
+- Cloud AI (ChatGPT/Grok) provides natural language response.
+- Response sent back to ESP32 for LED control or TTS playback.
+
+---
+
+## Environment Variables
+
+To use AI cloud services, you need to setup API keys securely:
+Create a .env.local file in the root directory and add keys there:
+
+```bash
+OPENAI_API_KEY='your-openai-api-key-here'
+GROK_API_COOKIE='your-grok-cookie-here'
+```
+
+Note: Make sure to never share your API keys publicly.
 
 ---
 
