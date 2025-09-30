@@ -5,7 +5,7 @@ from ai_backend import ai_backend_response
 from serial_comm import SerialComm
 import time
 
-def main_loop(serial_port="/dev/ttyACM0"):  # Adjust port according to OS
+def main_loop(serial_port="/dev/ttyACM0"):
     ser = SerialComm(serial_port)
 
     try:
@@ -13,25 +13,37 @@ def main_loop(serial_port="/dev/ttyACM0"):  # Adjust port according to OS
             command_from_esp = ser.receive()
             if command_from_esp:
                 print("Received command from ESP32:", command_from_esp)
+
                 if command_from_esp == "VOICE_COMMAND":
+                    # Voice recording and recognition
                     text = record_and_recognize()
-                    print("Recognized text:", text)
-                    intent, action = detect_intent(text)
-                    print("Detected intent:", intent, "action:", action)
-                    if intent:
-                        response = execute_action(action)
-                    else:
-                        response = ai_backend_response(text)
-                    print("Response to send:", response)
-                    ser.send(response)
                 else:
-                    response = ai_backend_response(command_from_esp)
-                    print("Response to send:", response)
-                    ser.send(response)
+                    # Direct text command from ESP32
+                    text = command_from_esp
+
+                print("Recognized text/input:", text)
+
+                # Define intent
+                intent, action = detect_intent(text)
+                print("Detected intent:", intent, "action:", action)
+
+                if intent:
+                    # Execute local command
+                    response = execute_action(action)
+                else:
+                    # Call AI backend if intent is not recognized
+                    response = ai_backend_response(text)
+
+                print("Response to send:", response)
+
+                # Send response to ESP32
+                ser.send(response)
+
             time.sleep(0.1)
 
     except Exception as e:
         print("Error in main_loop:", e)
+
     finally:
         ser.close()
         print("Program stopped.")

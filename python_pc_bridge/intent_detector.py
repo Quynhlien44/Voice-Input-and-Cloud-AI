@@ -3,14 +3,14 @@ import re
 intents = {
     "turn_on_light": {
         "patterns": [
-            r"turn on the light",
+            r"turn on (the )?light",
             r"light on"
         ],
         "action": "turn_on_light"
     },
     "play_music": {
         "patterns": [
-            r"play some music",
+            r"play (some )?music",
             r"start music"
         ],
         "action": "play_music"
