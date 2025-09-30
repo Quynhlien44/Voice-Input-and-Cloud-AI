@@ -1,0 +1,8 @@
+build/
+sdkconfig
+sdkconfig.old
+.vscode/
+__pycache__/
+venv
+.env.local
+
