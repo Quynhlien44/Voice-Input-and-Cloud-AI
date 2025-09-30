@@ -1,12 +1,12 @@
 # Voice Input and Cloud AI Project
 
----
+
 
 ## Overview
 
 This project builds an ESP32-S3 voice control hardware and a PC software acquisition system in Python, using cloud AI like ChatGPT or Grok for natural language processing.
 
----
+
 
 ## Structure
 
@@ -23,7 +23,7 @@ This project builds an ESP32-S3 voice control hardware and a PC software acquisi
     │   ├── requirements.txt  # Library to install for PC
     ├── README.md             # General information about the project
 
----
+
 
 ## Sample Project
 
@@ -33,7 +33,7 @@ This project builds an ESP32-S3 voice control hardware and a PC software acquisi
 - Details on how to build and create a new project according to the ESP-IDF documentation:
 https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project
 
----
+
 
 ## Setup Instructions
 
@@ -61,7 +61,7 @@ pip install -r python_pc_bridge/requirements.txt
 python3 python_pc_bridge/main.py
 ```
 
----
+
 
 ## How It Works
 
@@ -72,7 +72,7 @@ python3 python_pc_bridge/main.py
 - Cloud AI (ChatGPT/Grok) provides natural language response.
 - Response sent back to ESP32 for LED control or TTS playback.
 
----
+
 
 ## Environment Variables
 
@@ -87,7 +87,7 @@ GROK_API_COOKIE='your-grok-cookie-here'
 
 Note: Make sure to never share your API keys publicly.
 
----
+
 
 ## Note
 
