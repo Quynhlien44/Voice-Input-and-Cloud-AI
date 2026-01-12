@@ -1,0 +1,27 @@
+menu "WiFi Manager Configuration"
+
+    config WIFI_SSID
+        string "WiFi SSID"
+        default "iphone"
+        help
+            SSID (network name) for the example to connect to.
+
+    config WIFI_PASSWORD
+        string "WiFi Password"
+        default "111111111"
+        help
+            WiFi password (WPA or WPA2) for the example to use.
+
+    config WIFI_RETRY_COUNT
+        int "WiFi Connection Retry Count"
+        default 5
+        help
+            Number of retries for WiFi connection.
+
+    config WIFI_RETRY_DELAY_MS
+        int "WiFi Retry Delay (ms)"
+        default 3000
+        help
+            Delay between WiFi connection retries in milliseconds.
+
+endmenu
