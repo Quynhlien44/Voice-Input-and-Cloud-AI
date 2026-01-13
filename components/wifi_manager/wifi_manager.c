@@ -231,8 +231,8 @@ void wifi_manager_init(void)
 
     wifi_config_t wifi_config = {
         .sta = {
-            .ssid = "Keenetic-5122",
-            .password = "FnLPXGKj",
+            .ssid = "Your_SSID",
+            .password = "Your_PASSWORD",
             .scan_method = WIFI_FAST_SCAN,
             .sort_method = WIFI_CONNECT_AP_BY_SIGNAL,
             .threshold.rssi = -127,
