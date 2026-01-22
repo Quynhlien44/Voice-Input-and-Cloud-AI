@@ -47,7 +47,7 @@ See the system in action (Build process, Flashing, and Real-time Interaction):
 ![Real-time log](image/Real-time-process.jpeg)
 ![Real-time log](image/Real-time-cloud.jpeg)
 
-[![Watch the video](https://www.youtube.com/watch?v=FthmBr6W1Vs)]
+> \*\*[Watch the video](https://www.youtube.com/watch?v=FthmBr6W1Vs)
 
 > \*\*[Click here to watch](https://youtu.be/AqNa7VRDiWo?si=GJrA_oLSreSLrMGO)
 
