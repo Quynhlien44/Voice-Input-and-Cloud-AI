@@ -41,7 +41,22 @@ Key Achievements:
 - Memory-optimized firmware (<33% heap usage)
 - Production-ready with error handling
 
-Demo Video: [Link to demo video]
+See the system in action (Build process, Flashing, and Real-time Interaction):
+
+![Real-time log](image/Real-time-interaction.jpeg)
+![Real-time log](image/Real-time-process.jpeg)
+![Real-time log](image/Real-time-cloud.jpeg)
+
+[![Watch the video](https://www.youtube.com/watch?v=FthmBr6W1Vs)]
+
+> \*\*[Click here to watch](https://youtu.be/AqNa7VRDiWo?si=GJrA_oLSreSLrMGO)
+
+_The video demonstrates:_
+
+1. Build & Flash process using ESP-IDF.
+2. Real-time voice activity detection (VAD).
+3. MQTT communication logs between Hardware and Cloud Server.
+4. AI Response generation (Whisper + GPT-3.5).
 
 ---
 
@@ -487,7 +502,7 @@ Expected output includes connection status, voice detection events, and audio st
 
 ---
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
 ### Common Issues and Solutions
 
@@ -631,7 +646,7 @@ idf.py flash
 
 ---
 
-## References
+## 📚 References
 
 ### Technical Documentation
 
@@ -650,7 +665,7 @@ idf.py flash
 
 ---
 
-## Acknowledgments
+## 👏 Acknowledgments
 
 - **Espressif Systems** for the ESP32-S3 microcontroller and ESP-IDF framework
 - **OpenAI** for providing Whisper and ChatGPT APIs
